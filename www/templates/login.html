@@ -1,0 +1,47 @@
+<ion-view hide-nav-bar="true" view-title="login" cache-view="false">
+  <ion-content class="back-image" >
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+    <div class="row">
+      <div class="col col-35"></div>
+      <div class="col col-30">
+        <img src="img/idlidabba-logo.png" height="150px" width="100%">
+      </div>
+      <div class="col col-35"></div>
+    </div>
+
+    <center>
+        <h4 class="font1">Idlidabba</h4>
+    </center>
+   
+    <form name="delivery" ng-controller="LoginCtrl">
+
+      <br>
+
+      <div class="item item-input group1">
+         <span class="ion-android-person  icon-color"></span>
+         &nbsp;&nbsp; 
+         <input type="text" align="center" placeholder="Enter School Name" ng-Required="true"  ng-model="user.username">
+      </div>
+     
+      <!--  <div  class="item item-input group1">
+         <span  class="icon ion-android-lock icon-color"></span>&nbsp;&nbsp;
+         <input type="{{inputType}}" name="pswd" placeholder="Password" 
+                ng-Required="true" ng-model="user.password">
+         <a class="icon-color" ng-click='ShowPassword()' ng-class=" inputType =='password' ?  'ion-eye-disabled' : 'ion-eye'"></a>
+      </div>  --> 
+ 
+      <div class="group2 ">
+        <a class="button button-block button-darker font1" ng-disabled="delivery.$invalid" ng-click='login()'>
+        <b>VERIFY</b></a>
+      </div>
+    </form> 
+
+ </ion-content>
+</ion-view>
