@@ -14,6 +14,19 @@ angular.module('starter', ['ionic','login','feedback','ionic-ratings'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+
+    /*document.addEventListener("deviceready", function() {
+    hockeyapp.start(success, error, "d47a5740d9f7494c846806964943b019");
+    
+    function error(error) {
+     console.log(error);
+    }
+    
+    function success(status) {
+     console.log(status);
+    }
+    
+   }, false);*/
   });
 
   $ionicPlatform.registerBackButtonAction(function(e) {
