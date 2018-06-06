@@ -5,14 +5,14 @@ angular.module('login', [])
     $scope.user={username:""}
     $scope.login=function(){
 		 $scope.data= $scope.user.username;
-     $http.post(APIURL+'api/v1/user_feebacks_login?user_code='+$scope.data).then(function(response){
+     $http.post(APIURL+'/api/v1/user_feedbacks_login?user_code='+$scope.data).then(function(response){
        if(response.data==true){
         localStorage.setItem("usercode",$scope.data);
         $state.go("feedback");
        }else if(response.data==false){
          $ionicPopup.alert({
           title: 'Habitos Feedback',
-          template: 'Feedback code is wrong'
+          template: 'Feedback user code is wrong'
          })
        }
      },function(error){

@@ -34,7 +34,7 @@ angular.module('feedback',[])
               "rating":$scope.captureRating
              };
    if($scope.captureRating!=0 && $scope.captureRating!=undefined){
-     $http.post(APIURL+'api/v1/user_feebacks',data).then(function(response){
+     $http.post(APIURL+'/api/v1/user_feebacks',data).then(function(response){
        if(response.data.id!=undefined){
          ionicToast.show('Your feedback is updated.', 'bottom', false, 1000);
          $state.reload();
