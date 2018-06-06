@@ -15,8 +15,8 @@ angular.module('starter', ['ionic','login','feedback','ionic-ratings'])
       StatusBar.styleDefault();
     }
 
-    /*document.addEventListener("deviceready", function() {
-    hockeyapp.start(success, error, "d47a5740d9f7494c846806964943b019");
+    document.addEventListener("deviceready", function() {
+    hockeyapp.start(success, error, "d779544bc4604ebab33689bef11a15fd");
     
     function error(error) {
      console.log(error);
@@ -26,14 +26,14 @@ angular.module('starter', ['ionic','login','feedback','ionic-ratings'])
      console.log(status);
     }
     
-   }, false);*/
+   }, false);
   });
 
   $ionicPlatform.registerBackButtonAction(function(e) {
    e.preventDefault();
    function showConfirm() {
     var confirmPopup = $ionicPopup.show({
-     title : 'Idlidabba Says :-)',
+     title : 'Habitos Feedback',
      template : 'Are you sure want to exit ?',
      buttons : [{
       text : 'Cancel',
@@ -64,13 +64,20 @@ angular.module('starter', ['ionic','login','feedback','ionic-ratings'])
 
   .state('feedback', {
     url: '/feedback',
-    templateUrl: 'templates/feedback.html'
+    templateUrl: 'templates/feedback.html',
+    controller: 'FeedBackCtrl'
   })
 
   .state('login', {
     url: '/login',
-    templateUrl: 'templates/login.html'
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl'
   })
-
-  $urlRouterProvider.otherwise('/login');
+  if(localStorage.getItem("usercode")!=undefined){
+    $urlRouterProvider.otherwise('/feedback');
+  }else{
+    $urlRouterProvider.otherwise('/login');
+  }
 })
+
+var APIURL="http://192.168.1.72:3005/"

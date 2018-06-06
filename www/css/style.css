@@ -9,8 +9,8 @@ font-size: 100px;
 }
 
 .back-image{
- background-image: url('../img/bg.jpg');
- background-size: cover;
+ /*background-image: url('../img/bg.jpg');*/
+ background-color:#e5e6e8 !important;
 }
 .back-color{
   background-color: #fff;
@@ -20,6 +20,20 @@ font-size: 100px;
   font-family: 'Open Sans', sans-serif;
   font-style: bold;
   color:#ffffff; 
+}
+
+.button-darker.font1{
+   border-color:#444444;
+   background-color:#444444;
+   color: #fff;
+   border-radius: 10px 10px !important;
+}
+
+.button-darker.font1.activated{
+  border-color:#a2a2a2;
+  background-color:#262626;
+  color: #fff;
+  border-radius: 10px 10px !important;
 }
 
 .group1{
@@ -35,6 +49,11 @@ font-size: 100px;
   margin-left: 40px;
   margin-right: 40px;
   border-radius: 10px 10px;
+}
+
+.button.button-positive{
+  background-color: #2a2c27 !important;
+  border-radius: 18px 18px 18px 18px !important;
 }
 
 .item-input{
@@ -53,8 +72,8 @@ font-size: 100px;
 }
 
 .button-darker {
-    border-color:#73a30d;
-    background-color:#8EC63F;
+    border-color:#444444;
+    background-color:#444444;
     color: #fff;
     border-radius: 10px 10px !important;
 }
@@ -71,7 +90,7 @@ font-size: 100px;
 }
 
 .icon-color{
-  color:  #73a30d;
+  color:  #EE5B2B;
   font-size: 24px;
 }
 
@@ -91,20 +110,35 @@ font-size: 100px;
   font-family: 'Rubik', sans-serif !important;
 }
 
-.rate .scroll{
+/*.rate .scroll{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}*/
+
+.rate.has-subheader{
 	display: flex;
 	justify-content:center;
 	align-items:center;
 }
 
-.rate{
-	display: flex;
-	justify-content:center;
-	align-items:center;
-}
+/*.ratings{
+  margin-top: -40px;
+}*/
 
 .bar.bar-stable .title {
     color: #fff;
+}
+
+div.quote{
+  padding-top:162px;
+  display:block;
+  font-size: 18px;
+  text-align: center;
+  color: #424c54;
+}
+div.ratings{
+  margin-top: 5px;
 }
 
 .icon.ion-happy-outline{
@@ -112,6 +146,19 @@ font-size: 100px;
 }
 .icon.ion-happy{
 	padding:5px;
+}
+div.title.title-left.header-item{
+  left: 65px;
+  right: 65px;
+  text-align: center;
+}
+
+.bar.bar-subheader{
+  background: cadetblue;
+}
+
+.back-color.rate{
+  background:#dadac9;
 }
 
 
