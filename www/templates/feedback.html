@@ -1,5 +1,5 @@
-<ion-view ng-controller="FeedBackCtrl">
- <ion-nav-bar class="bar-stable"> 
+<ion-view ng-controller="FeedBackCtrl" view-title="FEEDBACK" cache-view="false">
+ <ion-nav-bar align-title="middle" class="bar-stable"> 
   <ion-nav-title class="brd_width">
     <span class="bar-stable"><strong class="p1">FEEDBACK</strong></span>
   </ion-nav-title>
@@ -15,9 +15,15 @@
 	</div> 
   <ion-content class="back-color rate has-subheader">   
     
-   <div class="quote">Give your valuable feedback to enhance our products</div> 
+   <div class="quote">Give your valuable feedback to evaluate our products</div> 
    <ionic-ratings ratingsobj='ratingsObject' class="ratings">&nbsp;</ionic-ratings>
-   
+   <!-- <div class="test">
+    <img src="img/Canteen-Feedback-Emoji-PNG-4.png" style="width:90px;">
+    <img src="img/Canteen-Feedback-Emoji-PNG-4.png" style="width:90px;margin-left: -35px;">
+    <img src="img/Canteen-Feedback-Emoji-PNG-4.png" style="width:90px;margin-left: -35px;">
+    <img src="img/Canteen-Feedback-Emoji-PNG-4.png" style="width:90px;margin-left: -35px;">
+    <img src="img/Canteen-Feedback-Emoji-PNG-4.png" style="width:90px;margin-left: -35px;">
+   </div> -->
   </ion-content>
    <div class="bar bar-footer bar-stable" ng-click="submit()">
       <span class="title"><strong class="p1">SUBMIT</strong></span>

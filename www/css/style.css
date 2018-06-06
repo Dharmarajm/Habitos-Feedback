@@ -133,9 +133,9 @@ font-size: 100px;
 div.quote{
   padding-top:162px;
   display:block;
-  font-size: 18px;
+  font-size: 19px;
   text-align: center;
-  color: #424c54;
+  color: #1f5891;
 }
 div.ratings{
   margin-top: 5px;
@@ -154,14 +154,39 @@ div.title.title-left.header-item{
 }
 
 .bar.bar-subheader{
-  background: cadetblue;
+  background: #c3c3c3;
 }
 
 .back-color.rate{
-  background:#dadac9;
+  background:none;
 }
 
+.ionic_toast_bottom{
+  bottom: 50px;
+  background:cadetblue;
+}
+.toast_section.ionic_toast_bottom.ionic_toast_sticky{
+  bottom: 50px;
+  /*background:transparent;*/
+  width: 75%;
+  text-align: center;
+  margin-left: 38px; 
+}
+.toast_section.ionic_toast_bottom{
+ bottom: 50px;
+ /*background:transparent;*/
+ /*color:black;*/
+ width: 75%;
+ text-align: center;
+ margin-left: 38px;  
+}
 
+.platform-android .header-item.title {
+    transition-duration: 0ms;
+}
+.platform-android .header-item.buttons {
+    transition-duration: 0ms;
+}
 
 @media only screen and (max-width: 800px) {
 	.ionic_ratings .icon {

@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic','login','feedback','ionic-ratings'])
+angular.module('starter', ['ionic','login','feedback','ionic-ratings','ionic-toast'])
 
 .run(function($ionicPlatform,$ionicPopup) {
   $ionicPlatform.ready(function() {
@@ -33,7 +33,7 @@ angular.module('starter', ['ionic','login','feedback','ionic-ratings'])
    e.preventDefault();
    function showConfirm() {
     var confirmPopup = $ionicPopup.show({
-     title : 'Idlidabba Says :-)',
+     title : 'Habitos Feedback',
      template : 'Are you sure want to exit ?',
      buttons : [{
       text : 'Cancel',
@@ -58,19 +58,28 @@ angular.module('starter', ['ionic','login','feedback','ionic-ratings'])
 
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
-  
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+  $ionicConfigProvider.views.transition('none');
   $stateProvider
 
   .state('feedback', {
     url: '/feedback',
-    templateUrl: 'templates/feedback.html'
+    templateUrl: 'templates/feedback.html',
+    controller: 'FeedBackCtrl'
   })
 
   .state('login', {
     url: '/login',
-    templateUrl: 'templates/login.html'
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl'
   })
-
-  $urlRouterProvider.otherwise('/login');
+  if(localStorage.getItem("usercode")!=undefined){
+    $urlRouterProvider.otherwise('/feedback');
+  }else{
+    $urlRouterProvider.otherwise('/login');
+  }
 })
+
+//var APIURL="http://192.168.1.72:3005/";
+var APIURL="http://api.learnstein.com:81";
+//var APIURL="http://api.idlidabba.com"

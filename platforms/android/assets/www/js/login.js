@@ -4,24 +4,23 @@ angular.module('login', [])
 
     $scope.user={username:""}
     $scope.login=function(){
-		$state.go("feedback");
-       /*$http.get(APIURL+'/api/v1/parentlogin?id='+$scope.user.username+'&dob='+$scope.user.password)
-       .then(function(response) {
-          if(response.data == false){
-            alert("Invalid Credentials");
-            $scope.user.password="";
-          }
-          else if (response.data[0][3]=="Individual" &&  $scope.user.username == response.data[0][1] ){
-            localStorage.setItem("tenant_id",response.data[0][2])
-            localStorage.setItem("stud_id",response.data[0][1])
-            $state.go("tab.mealplans");
-          }
-           else{
-            alert("Invalid Credentials");
-             $scope.user.password="";
-          }
-       })*/
-    
+		 $scope.data= $scope.user.username;
+     $http.post(APIURL+'api/v1/user_feebacks_login?user_code='+$scope.data).then(function(response){
+       if(response.data==true){
+        localStorage.setItem("usercode",$scope.data);
+        $state.go("feedback");
+       }else if(response.data==false){
+         $ionicPopup.alert({
+          title: 'Habitos Feedback',
+          template: 'Feedback code is wrong'
+         })
+       }
+     },function(error){
+       $ionicPopup.alert({
+        title: 'Habitos Feedback',
+        template: 'Failed to connect the server'
+      })
+     })
     }
 
     $scope.logout=function(){
@@ -42,15 +41,6 @@ angular.module('login', [])
       });
       
     }
-
-   /* $scope.inputType = 'password';
-    $scope.ShowPassword = function(){
-      if ($scope.inputType == 'password')
-        $scope.inputType = 'text';
-      else
-        $scope.inputType = 'password';
-    }*/
-
  })
 
 
