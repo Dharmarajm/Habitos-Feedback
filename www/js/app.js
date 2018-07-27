@@ -3,9 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic','login','feedback','ionic-ratings','ionic-toast'])
+angular.module('starter', ['ionic','login','feedback','ionic-toast'])
 
-.run(function($ionicPlatform,$ionicPopup) {
+.run(function($ionicPlatform,$ionicPopup, $rootScope, $state, $ionicHistory, $timeout, $http) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -80,6 +80,6 @@ angular.module('starter', ['ionic','login','feedback','ionic-ratings','ionic-toa
   }
 })
 
-//var APIURL="http://192.168.1.72:3005"
-var APIURL="http://api.learnstein.com:81";
+var APIURL="http://192.168.1.72:3005"
+//var APIURL="http://api.learnstein.com:81";
 //var APIURL="http://api.idlidabba.com"

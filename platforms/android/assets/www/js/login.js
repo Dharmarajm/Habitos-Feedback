@@ -1,21 +1,37 @@
 angular.module('login', [])
 
-.controller('LoginCtrl', function($scope,$state,$http,$rootScope,$ionicPopup) {
+.controller('LoginCtrl', function($scope,$state,$http,$rootScope,$ionicPopup,$ionicLoading,$timeout) {
 
     $scope.user={username:""}
     $scope.login=function(){
+      $ionicLoading.show({
+        content: 'Loading',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: 0
+      });
 		 $scope.data= $scope.user.username;
-     $http.post(APIURL+'/api/v1/user_feebacks_login?user_code='+$scope.data).then(function(response){
+     $http.post(APIURL+'/api/v1/user_feedbacks_login?user_code='+$scope.data).then(function(response){
        if(response.data==true){
+        $timeout(function() {
+            $ionicLoading.hide();
+          })
         localStorage.setItem("usercode",$scope.data);
         $state.go("feedback");
        }else if(response.data==false){
+        $timeout(function() {
+            $ionicLoading.hide();
+          })
          $ionicPopup.alert({
           title: 'Habitos Feedback',
-          template: 'Feedback user code is wrong'
+          template: 'Please enter valid user code'
          })
        }
      },function(error){
+      $timeout(function() {
+            $ionicLoading.hide();
+          })
        $ionicPopup.alert({
         title: 'Habitos Feedback',
         template: 'Failed to connect the server'

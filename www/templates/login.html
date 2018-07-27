@@ -40,27 +40,23 @@
  </ion-content>
 </ion-view> -->
 
-<ion-view view-title="login" cache-view="false">
+<ion-view view-title="login" cache-view="false" class="back-image">
     
-  <ion-content class="back-image">
+  <ion-content  overflow-scroll="true" has-bouncing="false">
   <br>
   <br>
   <br>  
-    <div class="row">
-      <div class="col col-35"></div>
-      <div class="col col-30">
-        <img src="img/habitos.png" height="150px"width:"100%;">
-      </div>
-      <div class="col col-35"></div>
+    <div class="feed-logo" style="text-align: center;">
+        <img src="img/habitos.png" height="150px">
     </div>
 
     
 
     <center>
-        <h4 style="color:#EE5423">Feedback</h4>
+        <h4 class="logo-h4" style="color:#EE5423">Feedback</h4>
     </center>
 
-    <form name="delivery" ng-controller="LoginCtrl">
+    <form name="delivery" ng-controller="LoginCtrl" novalidate>
 
       <br>
 

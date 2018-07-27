@@ -13,19 +13,45 @@
 	<div class="bar bar-subheader">
 	  <h2 class="title">Did you like the food?</h2>
 	</div> 
-  <ion-content class="back-color rate has-subheader">   
+  <ion-content class="back-color rate has-header has-subheader has-footer" has-bouncing="false">   
     
-   <div class="quote">Give your valuable feedback to evaluate our products</div> 
-   <ionic-ratings ratingsobj='ratingsObject' class="ratings">&nbsp;</ionic-ratings>
-   <!-- <div class="test">
-    <img src="img/Canteen-Feedback-Emoji-PNG-4.png" style="width:90px;">
-    <img src="img/Canteen-Feedback-Emoji-PNG-4.png" style="width:90px;margin-left: -35px;">
-    <img src="img/Canteen-Feedback-Emoji-PNG-4.png" style="width:90px;margin-left: -35px;">
-    <img src="img/Canteen-Feedback-Emoji-PNG-4.png" style="width:90px;margin-left: -35px;">
-    <img src="img/Canteen-Feedback-Emoji-PNG-4.png" style="width:90px;margin-left: -35px;">
-   </div> -->
-  </ion-content>
-   <div class="bar bar-footer bar-stable" ng-click="submit()">
-      <span class="title"><strong class="p1">SUBMIT</strong></span>
+  <div class="row" style="height:100%;align-items: center;padding: 0;justify-content: center;">
+    <div class="col-100">
+     <div class="quote">How much do you like Habitos food?</div> 
+    <!--   <span ng-repeat="rating in ratings">
+        <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
+      </span> -->
+      <div class="rating row">
+        <div class="col col-25" ng-repeat="star in stars" id="strong" ng-class="{'active':star.filled==true }" ng-click="toggle(star.id,star)" style="text-align:center;">
+         <label style="text-align:center;"><img src="{{star.image}}"><br>{{star.description}}</label>
+        </div>
+      </div>
+     <!-- <ionic-ratings ratingsobj='ratingsObject' class="ratings">&nbsp;</ionic-ratings> -->
     </div>
+  </div>
+  </ion-content>
+  <!--  <div class="bar bar-footer bar-stable" ng-click="submit()">
+      <span class="title"><strong class="p1">SUBMIT</strong></span>
+    </div> -->
 </ion-view>
+<style type="text/css">
+  img{
+    width: 100%;
+    opacity: 0.5;
+  }
+  .col-25.active img{
+    opacity: 1;
+  }
+  .col-25.active label{
+    color: #ee5223;
+    font-weight: bold;
+  }
+  @media only screen and (max-width: 1024px) and (min-width: 768px) {
+
+    label{
+      font-size: 1.2rem;
+      display: block;
+      color: #545555;
+    }
+  }
+</style>

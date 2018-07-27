@@ -5,7 +5,7 @@
 }
 
 .ionic_ratings .icon {
-font-size: 100px;
+font-size: 70px;
 }
 
 .back-image{
@@ -130,13 +130,7 @@ font-size: 100px;
     color: #fff;
 }
 
-div.quote{
-  padding-top:162px;
-  display:block;
-  font-size: 19px;
-  text-align: center;
-  color: #1f5891;
-}
+
 div.ratings{
   margin-top: 5px;
 }
@@ -147,11 +141,11 @@ div.ratings{
 .icon.ion-happy{
 	padding:5px;
 }
-div.title.title-left.header-item{
+/*div.title.title-left.header-item{
   left: 65px;
   right: 65px;
   text-align: center;
-}
+}*/
 
 .bar.bar-subheader{
   background: #c3c3c3;
@@ -170,7 +164,8 @@ div.title.title-left.header-item{
   /*background:transparent;*/
   width: 75%;
   text-align: center;
-  margin-left: 38px; 
+  margin-left: auto;
+  margin-right: auto;
 }
 .toast_section.ionic_toast_bottom{
  bottom: 50px;
@@ -178,7 +173,8 @@ div.title.title-left.header-item{
  /*color:black;*/
  width: 75%;
  text-align: center;
- margin-left: 38px;  
+ margin-left: auto;
+ margin-right: auto; 
 }
 
 .platform-android .header-item.title {
@@ -188,13 +184,121 @@ div.title.title-left.header-item{
     transition-duration: 0ms;
 }
 
+div.quote{
+    margin-bottom: 15px;
+    color: #1f5891;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+
+/*div.row{
+  display: flex;
+  align-items:center;
+}*/
 @media only screen and (max-width: 800px) {
-	.ionic_ratings .icon {
-        font-size: 100px;
+	.platform-android.ionic_ratings.icon {
+        font-size: 120px;
 	}
+  .platform-ios.ionic_ratings.icon{
+       font-size: 120px;
+  }
+  .platform-ios div.quote{
+    font-size: 25px; 
+  }
+  .platform-android div.quote{
+    font-size: 25px; 
+  }
+  .platform-android div.quote{
+    display:block;
+    font-size: 19px;
+    text-align: center;
+    color: #1f5891;
+  }
+  .platform-ios div.quote{
+   display:block;
+   /*font-size: 18px;*/
+   text-align: center;
+   color: #1f5891;
+  }
+
 }
 @media only screen and (max-width: 480px) {
-	.ionic_ratings .icon {
-        font-size: 70px;
+	.platform-android.ionic_ratings.icon {
+        font-size: 100px;
 	}
+  .platform-ios.ionic_ratings.icon{
+       font-size: 100px;
+  }
+  .platform-ios div.quote{
+    font-size: 18px;
+  }
+  .platform-android div.quote{
+    display:block;
+    font-size: 19px;
+    text-align: center;
+    color: #1f5891;
+  }
+  .platform-ios div.quote{
+   display:block;
+   /*font-size: 18px;*/
+   text-align: center;
+   color: #1f5891;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .ionic_ratings .icon {
+      font-size: 85px;
+  }
+  form{
+    padding: 50px;
+  }
+  .feed-logo img{
+    height: 250px;
+  }
+  .logo-h4{
+    font-size: 24px;
+  }
+  div.ratings{
+   margin-top: 10px;
+  }
+  div.quote{
+    display:block;
+    font-size: 19px;
+    text-align: center;
+    color: #1f5891;
+  }
+
+}
+
+
+
+.rating {
+    color: #a9a9a9;
+    margin: 0;
+    padding: 0;
+}
+ul.rating {
+    display: inline-block;
+}
+.rating li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.rating .filled {
+    color: red;
+}
+
+.loading-container .loading{
+  padding: 20px;
+  border-radius: 5px;
+   background-color: transparent;
+  color: #fff;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-size: 15px;
 }
