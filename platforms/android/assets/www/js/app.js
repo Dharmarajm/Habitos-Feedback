@@ -80,6 +80,6 @@ angular.module('starter', ['ionic','login','feedback','ionic-toast'])
   }
 })
 
-var APIURL="http://192.168.1.72:3005"
+//var APIURL="http://192.168.1.72:3005"
 //var APIURL="http://api.learnstein.com:81";
-//var APIURL="http://api.idlidabba.com"
+var APIURL="http://api.idlidabba.com"

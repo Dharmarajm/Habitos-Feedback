@@ -2,7 +2,7 @@ angular.module('feedback',[])
 
 .controller('FeedBackCtrl', function($scope,$http,$ionicPopup,$state,$location,ionicToast,$ionicLoading,$timeout) {
   
-  $scope.stars = [{"id":2,"image":"img/1.png","filled":false,"description":'Bad'},{"id":3,"image":"img/2.png","filled":false,"description":'Average'},{"id":4,"image":"img/3.png","filled":false,"description":'Good'},{"id":5,"image":"img/4.png","filled":false,"description":'Very Good'}]
+  $scope.stars = [{"id":2,"image":"img/1.png","filled":false,"description":'Not Good'},{"id":3,"image":"img/2.png","filled":false,"description":'Average'},{"id":4,"image":"img/3.png","filled":false,"description":'Good'},{"id":5,"image":"img/4.png","filled":false,"description":'Excellent'}]
 
   $scope.submit=function(){
     
@@ -15,7 +15,7 @@ angular.module('feedback',[])
        if(response.data.id!=undefined){
          $ionicLoading.hide();
          angular.element(document.getElementsByClassName('col-25')).removeClass("active");
-         $scope.stars = [{"id":2,"image":"img/1.png","filled":false,"description":'Bad'},{"id":3,"image":"img/2.png","filled":false,"description":'Average'},{"id":4,"image":"img/3.png","filled":false,"description":'Good'},{"id":5,"image":"img/4.png","filled":false,"description":'Very Good'}]
+         $scope.stars = [{"id":2,"image":"img/1.png","filled":false,"description":'Not Good'},{"id":3,"image":"img/2.png","filled":false,"description":'Average'},{"id":4,"image":"img/3.png","filled":false,"description":'Good'},{"id":5,"image":"img/4.png","filled":false,"description":'Excellent'}]
          ionicToast.show('Your feedback is updated.', 'bottom', false, 1000);
        }else{
 

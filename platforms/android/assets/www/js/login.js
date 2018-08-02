@@ -40,12 +40,14 @@ angular.module('login', [])
     }
 
     $scope.logout=function(){
+      console.log('test')
       $ionicPopup.confirm({
         title: "Do you want to Logout?",
         template: '<style>.popup { width:700px; } .popup-head { background-color: #FFFFFF; } .popup-title { color: #000; }</style>',
           buttons: [{ text: 'Yes',
           type: 'button-positive',
           onTap: function(){
+            $scope.user={username:""}
             localStorage.clear();
             $state.go("login")
           }
